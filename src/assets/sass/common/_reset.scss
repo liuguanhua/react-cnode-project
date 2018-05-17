@@ -1,0 +1,367 @@
+@charset "utf-8";
+html {
+  @extend %ft-black;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 禁用iPhone中Safari的字号自动调整 */
+  text-rendering: optimizelegibility;
+  max-width: 768px;
+  margin: auto;
+  @extend %bg-qgrey;
+  touch-action: none;
+}
+
+body {
+  /*解决上下拉动滚动条时卡顿、慢*/
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-scrolling: touch;
+  @extend %bg-qgrey;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+a,
+body,
+button,
+html,
+input,
+select,
+textarea {
+  font: 0.7rem/0.8rem 'Helvetica Neue', Helvetica, STHeiTi, Arial, sans-serif;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+iframe,
+img {
+  border: 0;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+
+abbr {
+  cursor: help;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  /* ie8 */
+  -ms-interpolation-mode: bicubic;
+  /*为了照顾ie图片缩放失真*/
+}
+
+em {
+  font-style: normal;
+}
+
+a {
+  border: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  @extend %ft-black;
+  text-decoration: none;
+}
+
+//IE下
+a:focus {
+  outline: none;
+}
+
+//FF下
+a.hidefocus {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+mark {
+  background: #fffdd1;
+  border-bottom: 1px solid #ffedce;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+code,
+pre,
+pre tt {
+  font-family: Courier, 'Courier New', monospace;
+}
+
+figcaption,
+small {
+  font-size: 14px;
+  color: #888;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+//[draggable]{cursor:move;}
+/*========== headline ==========*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+h2 {
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+}
+
+h3 {
+  font-size: 0.75rem;
+  line-height: 1.2rem;
+}
+
+h4 {
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+}
+
+h5 {
+  font-size: 0.4rem;
+  line-height: 0.6rem;
+}
+
+h6 {
+  font-size: 0.2rem;
+  line-height: 0.4rem;
+}
+
+/*========== clearfix ==========*/
+
+.clearfix {
+  zoom: 1;
+  display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+
+[clearfix]:after,
+[clearfix]:before {
+  content: '';
+  display: table;
+}
+
+[clearfix]:after {
+  clear: both;
+}
+
+* html [clearfix] {
+  height: 1%;
+}
+
+[clearfix] {
+  //  display: block;
+}
+
+/* End hide from IE-mac */
+
+* + html [clearfix] {
+  min-height: 1%;
+}
+
+/* IE7 */
+
+.clearFd {
+  clear: both;
+}
+
+/*========== form ==========*/
+
+input[type='checkbox'] {
+  vertical-align: middle;
+  &:checked {
+    appearance: none;
+  }
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='checkbox'],
+input[type='reset'] {
+  cursor: pointer;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+textarea:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus,
+button:focus,
+input[type='reset']:focus,
+input[type='submit']:focus,
+input[type='button']:focus {
+  outline: none;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+textarea:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus {
+  //      @include box-shadow(0 0 .2rem $ft-sgrey);
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  @include box-shadow(0 0 0 rgba(0, 0, 0, 0));
+  -webkit-appearance: none;
+}
+
+/* 去除iPhone中默认的input样式 */
+
+input {
+  resize: none;
+}
+
+button {
+  border: none;
+}
+
+//      -webkit-user-select: none;/*禁止复制、选中文本*/
+//      -moz-user-select: none;
+//      -khtml-user-select: none;
+//       user-select: none;
+button,
+input {
+  outline: none; //
+  appearance: none; //去掉ios input 默认圆角
+  -webkit-appearance: none;
+  border-radius: 0; //去掉ios button 默认圆角
+  -webkit-tap-highlight-color: transparent; //去掉ios在触发的时候，input会有一个灰色的背景色块
+  -webkit-touch-callout: none;
+  /*长时间按住页面出现闪退*/
+}
+
+/*========== Delete button under Firefox default style ==========*/
+
+input[type='reset']::-moz-focus-inner,
+input[type='button']::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner,
+input[type='file'] > input[type='button']::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}

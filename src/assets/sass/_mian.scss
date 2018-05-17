@@ -1,0 +1,384 @@
+@charset "utf-8";
+/* ========== public ========== */
+
+.fl {
+    @include float;
+}
+
+.fr {
+    @include float-right;
+}
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
+.pf {
+    position: fixed;
+}
+
+.pl {
+    padding-left: $pd;
+}
+
+.t0 {
+    top: 0;
+}
+
+.b0 {
+    bottom: 0;
+}
+
+.l0 {
+    left: 0;
+}
+
+.r0 {
+    right: 0;
+}
+
+.tl0 {
+    top: 0;
+    left: 0;
+}
+
+.bl0 {
+    bottom: 0;
+    left: 0;
+}
+
+.lr0 {
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.tb0 {
+    top: 0;
+    bottom: 0;
+}
+
+.tblr {
+    @extend %tblr;
+}
+
+.z1 {
+    z-index: 1;
+}
+
+.z3 {
+    z-index: 3;
+}
+
+.z5 {
+    z-index: 5;
+}
+
+.wh100 {
+    @include plwh(100%);
+}
+
+[hide],
+.hide {
+    @extend %hide;
+}
+
+[show] {
+    @extend %show;
+}
+
+.ilbk,
+.icons,
+.icon,
+.svg,
+[ilbk] {
+    @include inline-block;
+}
+
+.mgt {
+    margin-top: $pd;
+}
+
+.rdir-mgt {
+    margin-top: -$pd;
+}
+
+.mgb {
+    margin-bottom: $pd;
+}
+
+.mgl {
+    margin-left: $pd;
+}
+
+.mgr {
+    margin-right: $pd;
+}
+
+.mgtb {
+    margin: $pd 0;
+}
+
+.mglr {
+    margin: 0 $pd;
+}
+
+.mgt {
+    margin-top: $pd;
+}
+
+.pd {
+    padding: $pd;
+}
+
+.pdtb {
+    padding: $pd 0;
+}
+
+.pdtr {
+    padding-top: $pd;
+    padding-right: $pd;
+}
+
+.pdlr {
+    padding: 0 $pd;
+}
+
+.pdtl {
+    padding-top: $pd;
+    padding-left: $pd;
+}
+
+.pdlb {
+    padding-bottom: $pd;
+    padding-left: $pd;
+}
+
+.pdtbl {
+    padding: $pd 0 $pd $pd;
+}
+
+.pdl {
+    padding-left: $pd;
+}
+
+.pdt {
+    padding-top: $pd;
+}
+
+.pdr {
+    padding-right: $pd;
+}
+
+.pdb {
+    padding-bottom: $pd;
+}
+
+.w-half {
+    width: 50%;
+}
+
+.tc {
+    @extend %tc;
+}
+
+.tr {
+    @extend %tr;
+}
+
+.tl {
+    @extend %tl;
+}
+
+.ys-white {
+    @extend %ft-white;
+}
+
+.st-font {
+    @extend %ft-sfm;
+}
+
+%fz8,
+.fz8 {
+    font-size: 0.8rem;
+}
+
+[ellipsis],
+[data-ellipsis] {
+    @include ellipsis;
+}
+
+[ft-color] {
+    @extend %ft-color;
+}
+
+[ft-white],
+.ft-white {
+    @extend %ft-white;
+}
+
+.ft-sgrey {
+    @extend %ft-sgrey;
+}
+
+.ft-qgrey {
+    @extend %ft-qgrey;
+}
+
+.ft-grey {
+    @extend %ft-grey;
+}
+
+.ft-orange {
+    @extend %ft-orange;
+}
+
+.ft-color {
+    @extend %ft-color;
+}
+
+.ft-purple {
+    color: #00f0ff;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.ft-bold {
+    font-weight: 900;
+}
+
+.ft-normal {
+    font-weight: normal;
+}
+
+[ft-hidden] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.vam {
+    vertical-align: middle;
+}
+
+.img-tc {
+    @extend %show;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dp-flex {
+    @include display-flex;
+}
+
+[bg-color] {
+    @extend %bg-color;
+}
+
+.bg-sgrey {
+    @extend %bg-sgrey;
+}
+
+.bg-qgrey {
+    @extend %bg-qgrey;
+}
+
+.bg-grey {
+    @extend %bg-grey;
+}
+
+.bg-white {
+    @extend %bg-white;
+}
+
+.bg-orange {
+    @extend %bg-orange;
+}
+
+.bg-color {
+    @extend %bg-color;
+}
+
+.bg-black {
+    @extend %bg-black;
+}
+
+.bg-qblack {
+    @extend %bg-qblack;
+}
+
+.bg-transparent {
+    background-color: rgba($ft-black, .5);
+}
+
+.bg-color-none {
+    background-color: transparent;
+}
+
+.bdr-half {
+    @include border-radius(50%);
+}
+
+/* ========== flex ========== */
+
+.numFt {
+    font-family: 'Georgia'; //好看的数字字体
+}
+
+.bd-radius {
+    border-radius: .3rem;
+}
+
+.bd-none {
+    border: none;
+}
+
+.small-font {
+    font-size: .6rem;
+}
+
+.tab-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.tab-wrap-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+%mask-tm {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.mask-layer {
+    @extend %mask-tm;
+}
+
+.mask-page {
+    z-index: 1;
+    @extend %mask-tm;
+}

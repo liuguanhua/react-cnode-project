@@ -1,0 +1,118 @@
+.container {
+    padding: 1.9rem 0 2.7rem;
+}
+
+.container-top {
+    padding-top: 2rem;
+}
+
+.container-bottom {
+    padding-bottom: 2.7rem;
+}
+
+[data-layout-flex='0'] {
+    @include flex(none);
+}
+
+[layout],
+[data-layout='layout'] {
+    @include display-flex;
+}
+
+[data-layout-wrap],
+[flex] {
+    @include flex(1);
+}
+
+[data-layout-wrap],
+[layout-wrap] {
+    @include flex-wrap(wrap);
+}
+
+[data-layout='row'],
+[layout='row'] {
+    @include flex-direction(row);
+}
+
+[data-layout='column'],
+[layout='column'] {
+    @include flex-direction(column);
+}
+
+[data-layout-align='start start'],
+[data-layout-align='start center'],
+[data-layout-align='start end'] [layout-align='start start'],
+[layout-align='start center'],
+[layout-align='start end'] {
+    @include justify-content(flex-start);
+}
+
+[data-layout-align='center start'],
+[data-layout-align='center center'],
+[data-layout-align='center end'],
+[layout-align='center start'],
+[layout-align='center center'],
+[layout-align='center end'] {
+    @include justify-content(center);
+}
+
+[data-layout-align='end start'],
+[data-layout-align='end center'],
+[data-layout-align='end end'] [layout-align='end start'],
+[layout-align='end center'],
+[layout-align='end end'] {
+    @include justify-content(flex-end);
+}
+
+[data-layout-align='space-between start'],
+[data-layout-align='space-between center'],
+[data-layout-align='space-between end'],
+[layout-align='space-between start'],
+[layout-align='space-between center'],
+[layout-align='space-between end'] {
+    @include justify-content(space-between);
+}
+
+[data-layout-align='space-arround start'],
+[data-layout-align='space-arround center'],
+[data-layout-align='space-arround end'] [layout-align='space-arround start'],
+[layout-align='space-arround center'],
+[layout-align='space-arround end'] {
+    @include justify-content(space-arround);
+}
+
+[data-layout-align='start start'],
+[data-layout-align='center start'],
+[data-layout-align='end start'],
+[data-layout-align='space-between start'],
+[data-layout-align='space-arround start'] [layout-align='start start'],
+[layout-align='center start'],
+[layout-align='end start'],
+[layout-align='space-between start'],
+[layout-align='space-arround start'] {
+    @include align-items(flex-start);
+}
+
+[data-layout-align='start center'],
+[data-layout-align='center center'],
+[data-layout-align='end center'],
+[data-layout-align='space-between center'],
+[data-layout-align='space-arround center'] [layout-align='start center'],
+[layout-align='center center'],
+[layout-align='end center'],
+[layout-align='space-between center'],
+[layout-align='space-arround center'] {
+    @include align-items(center);
+}
+
+[data-layout-align='start end'],
+[data-layout-align='center end'],
+[data-layout-align='end end'],
+[data-layout-align='space-between end'],
+[data-layout-align='space-arround end'] [layout-align='start end'],
+[layout-align='center end'],
+[layout-align='end end'],
+[layout-align='space-between end'],
+[layout-align='space-arround end'] {
+    @include align-items(flex-end);
+}

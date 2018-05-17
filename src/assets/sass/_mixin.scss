@@ -1,0 +1,226 @@
+@charset "utf-8";
+/*========== 主体颜色 ==========*/
+
+$pd: 0.4rem;
+$ft-color: #639;
+$ft-white: #fff;
+$ft-black: #000;
+$ft-qblack: #333;
+$ft-orange: #fcd667;
+$ft-grey: #909ba5;
+$ft-sgrey: #b6b6b6;
+$ft-qgrey: #f3f3f3;
+$ft-golden: #baa16c;
+$ft-blue: #3068b5;
+$ft-sblue: #123b77;
+$hv-color: #5f8c02;
+$mg10: 10px;
+$cheek: 1px solid $ft-grey;
+/*========== 网页字体 ==========*/
+
+%ft-wfm {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+%ft-sfm {
+    font-family: "simsun", Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+/* ========== 字体颜色 ========== */
+
+%ft-color {
+    color: $ft-color;
+}
+
+%ft-white {
+    color: $ft-white;
+}
+
+%ft-black {
+    color: $ft-black;
+}
+
+%ft-qblack {
+    color: $ft-qblack;
+}
+
+%ft-grey {
+    color: $ft-grey;
+}
+
+%ft-qgrey {
+    color: $ft-qgrey;
+}
+
+%ft-sgrey {
+    color: $ft-sgrey;
+}
+
+%ft-sblue {
+    color: $ft-sblue;
+}
+
+%ft-golden {
+    color: $ft-golden;
+}
+
+%ft-orange {
+    color: $ft-orange;
+}
+
+%hv-ft-color {
+    color: $ft-color;
+}
+
+/* ========== 字体大小 ========== */
+
+%ft-big {
+    font-size: 16px;
+}
+
+%ft-small {
+    font-size: 12px;
+    line-height: 22px;
+}
+
+/* ========== 文本位置 ========== */
+
+%tc {
+    text-align: center;
+}
+
+%tr {
+    text-align: right;
+}
+
+%tl {
+    text-align: left;
+}
+
+/* ========== 背景颜色 ========== */
+
+%bg-black {
+    background: $ft-black;
+}
+
+%bg-qblack {
+    background: $ft-qblack;
+}
+
+%bg-grey {
+    background: $ft-grey;
+}
+
+%bg-sgrey {
+    background: $ft-sgrey;
+}
+
+%bg-qgrey {
+    background: $ft-qgrey;
+}
+
+%bg-white {
+    background-color: $ft-white;
+}
+
+%bg-color {
+    background-color: $ft-color;
+}
+
+%bg-orange {
+    background-color: $ft-orange;
+}
+
+%bg-blue {
+    background-color: $ft-blue;
+}
+
+%bg-hv {
+    background-color: $hv-color;
+}
+
+%bd-cheek {
+    border: $cheek;
+}
+
+%fslse {
+    content: "";
+}
+
+@mixin border($bdcolor) {
+    border: 1px solid $bdcolor;
+}
+
+@mixin plborder($tblr, $bdcolor) {
+    border-#{$tblr}: 1px solid $bdcolor;
+}
+
+@mixin plmargin($tblr, $mgpx) {
+    margin-#{$tblr}: $mgpx;
+}
+
+@mixin margin($mg) {
+    margin: $mg;
+}
+
+@mixin plpadding($tblr, $pdpx) {
+    padding-#{$tblr}: $pdpx;
+}
+
+@mixin plhlh($hlh) {
+    height: $hlh;
+    line-height: $hlh;
+}
+
+%show {
+    display: block;
+}
+
+%hide {
+    display: none;
+}
+
+%tblr {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* ========== clear ========== */
+
+@mixin clear {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%clear {
+    @include clear;
+}
+
+/* ========== opacity ========== */
+
+@mixin plwh($wh) {
+    width: $wh;
+    height: $wh;
+}
+
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin plwhr($wh) {
+    width: $wh;
+    height: $wh; // @include border-radius(50%);
+}
