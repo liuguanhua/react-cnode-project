@@ -1,12 +1,36 @@
 # react-cnode-project
 
-### React 版 cnode 社区
+### React 版 Cnode 社区
 
-技术栈： WebPack^3.6、React^16.3、React-router-dom^4.2.2、antd^3.5、React-dom^16.3、Redux、React-redux、Es6、Flex、Sass
+技术栈： WebPack^3.6、React^16.3、React-Router-Dom^4.2、Antd^3.5、React-Dom^16.3、Redux、React-Redux、Es6、Flex、Sass
 
-访问链接：[Demo](//liuguanhua.github.io/cnode)
+访问链接：[在线访问](//liuguanhua.github.io/cnode)
 
 ![qrcode](https://raw.githubusercontent.com/liuguanhua/liuguanhua.github.io/master/cnode/cnode-qrcode.png)
+
+### 目录
+
+```
+react-cnode-project/
+   |
+   ├──src/
+       |
+       ├──assets/                    * 资源文件(图标、图片、样式)
+       |
+       ├──component/                 * 公共组件
+       │
+       │──script/                    * 脚本(Rem适配、Axios请求、路由配置、工具函数)
+       |
+       ├──store/                     * Redux
+       │
+       ├──view                       * 视图展示页面
+       │
+       │__index.js                   * 入口文件
+       │
+       │__registerServiceWorker.js   * ServiceWorker
+   |
+   ├──config-overrides.js            * 增加WebPack配置及修改Antd主题颜色
+```
 
 ### 功能
 
@@ -16,7 +40,7 @@
 * 评论、点赞帖子
 * 查看用户资料
 
-安装：通过 yarn 来安装
+### 运行
 
 ```
 下载：git clone https://github.com/liuguanhua/react-cnode-project.git
