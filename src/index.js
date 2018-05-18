@@ -11,14 +11,14 @@ import '@script/reuse'
 import registerServiceWorker from './registerServiceWorker'
 
 import App from '@view/App'
-
 import '@assets/styles/css/global'
-const store = createStore(reducers, applyMiddleware(thunk))
 
-//HashRouter 发布模式刷新找不到页面的问题
+const store = createStore(reducers, applyMiddleware(thunk))
+//Router 发布模式刷新会找不到页面，需配置服务端
 const ModeRouter = Object.is(process.env.NODE_ENV, 'development')
   ? Router
   : HashRouter
+
 render(
   <ModeRouter history={history} hashType="hashbang">
     <Provider store={store}>

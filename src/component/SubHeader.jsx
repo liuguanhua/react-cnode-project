@@ -1,5 +1,5 @@
-import { Route, Link } from 'react-router-dom'
-import '@assets/fonts/svg/goback.svg'
+import { Route } from 'react-router-dom'
+import '@fonts/svg/goback.svg'
 const SubHeader = props => (
   <Route
     render={({ location, match, history }) => {

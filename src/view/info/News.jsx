@@ -12,7 +12,7 @@ const TabPane = Tabs.TabPane
 class UserNews extends React.Component {
   constructor(props) {
     super(props)
-    this.userInfo = this.$userExp()
+    this.userInfo = this.$getStorage()
     this.state = {
       info: {}
     }
@@ -53,7 +53,7 @@ class UserNews extends React.Component {
 class NewsContent extends React.Component {
   constructor(props) {
     super(props)
-    this.userInfo = this.$userExp()
+    this.userInfo = this.$getStorage()
   }
   clearReadMsg() {
     this.$request({

@@ -69,12 +69,10 @@ export default class LoadMore extends React.Component {
           resolve && resolve()
         }
       }
-    }).then(() => {
-      // console.info('加载成功！');
     })
   }
   render() {
-    const { hasMore, initializing, refreshedAt, canRefreshResolve } = this.state
+    const { hasMore, initializing } = this.state
     const { infoList } = this.state
     return (
       <div className="load-more-view loadmore-wrap container-bottom">

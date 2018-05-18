@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { userExp, showMsg } from '@script/utils'
-const isDev = process.env.NODE_ENV === 'development'
+import { getStorage, showMsg } from '@script/utils'
+const isDev = Object.is(process.env.NODE_ENV, 'development')
 const apiUrl = 'https://cnodejs.org/api/v1/'
 /**
  * 请求数据
@@ -29,13 +29,10 @@ export const request = options => {
       .catch(error => {
         isDev && console.error(error)
         if (error.response) {
-          const [errData, errStatus] = [
-            error.response.data,
-            error.response.status
-          ]
-          options.error && options.error(errData)
-          !errData.success && errData.error_msg && showMsg(errData.error_msg)
-          reject(errData)
+          const { data, status } = error.response
+          options.error && options.error(data)
+          !data.success && data.error_msg && showMsg(data.error_msg)
+          reject(data)
         }
       })
   })
@@ -44,5 +41,5 @@ export const request = options => {
 Object.assign(React.Component.prototype, {
   $request: request,
   $showMsg: showMsg,
-  $userExp: userExp
+  $getStorage: getStorage
 })

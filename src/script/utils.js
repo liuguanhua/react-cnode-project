@@ -68,11 +68,10 @@ export const setStorage = (key, value) => {
   value['setKeyTime'] = +new Date()
   Rstore.set(key, value)
 }
+
 /**
  * 获取用户存储信息
- * @param {any} e
+ *
  * @returns
  */
-export const userExp = e => {
-  return Rstore.get('saveUser')
-}
+export const getStorage = () => Rstore.get('USER_INFO')

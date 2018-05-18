@@ -3,6 +3,7 @@ export default {
   fetchData(id) {
     return (dispatch, getState) => {
       dispatch(this.fetchStart())
+      //获取文章详情
       request({
         url: `topic/${id}`,
         success: result => {
@@ -14,7 +15,9 @@ export default {
       })
     }
   },
-  fetchStart: () => ({ type: 'FETCH_START' }),
+  fetchStart() {
+    return { type: 'FETCH_START' }
+  },
   fetchDone(result) {
     return { type: 'FETCH_DONE', result: result }
   },

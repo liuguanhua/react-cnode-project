@@ -3,7 +3,7 @@ import { DetectLogin } from '@component/common/SharedCompt'
 class Issue extends React.Component {
   constructor(props) {
     super(props)
-    const isLogin = this.$userExp()
+    const isLogin = this.$getStorage()
     this.state = {
       title: '',
       content: '',

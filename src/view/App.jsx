@@ -4,14 +4,14 @@ import classNames from 'classnames'
 import qs from 'qs'
 
 import history from '@script/history'
-import { userExp } from '@script/utils'
+import { getStorage } from '@script/utils'
 import RouteConfig from '@script/routers'
 
 import Header from '@component/Header'
 import Menu from '@component/Menu'
 import SubHeader from '@component/SubHeader'
 
-import '@assets/fonts/svg/gotop.svg'
+import '@fonts/svg/gotop.svg'
 
 const RouteWithSubRoutes = route => (
   <Route
@@ -40,7 +40,7 @@ export default () => {
         })
         //当前用户
         if (Object.is(pathname, '/user')) {
-          const userInfo = userExp()
+          const userInfo = getStorage()
           queryName = qs.parse(search.slice(1)).name
           isUserCur = userInfo && Object.is(userInfo.loginname, queryName)
         }

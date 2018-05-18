@@ -31,7 +31,7 @@ export class UserLogin extends React.Component {
         if (result.success) {
           this.$showMsg('登录成功!')
           result['accesstoken'] = UserTokenVal
-          setStorage('saveUser', result)
+          setStorage('USER_INFO', result)
           this.props.history.push({
             pathname: '/user',
             search: `?name=${result.loginname}`
@@ -80,7 +80,7 @@ export const NotLogin = props => {
       {props.isLogo && (
         <img
           className="not-login-photo"
-          src={require('@assets/images/logo.png')}
+          src={require('@images/logo.png')}
           alt=""
         />
       )}
@@ -103,7 +103,7 @@ export const DetectLogin = props => {
       super(props)
     }
     render() {
-      if (this.$userExp()) return <props.realuser {...this.props} />
+      if (this.$getStorage()) return <props.realuser {...this.props} />
       return <NotLogin />
     }
   }
@@ -111,10 +111,9 @@ export const DetectLogin = props => {
 }
 
 export const LoadLoop = () => <div className="tc pdtb">玩命加载中...</div>
-
 export const LoadFail = () => <div className="tc pdtb">加载失败!</div>
-
 export const NotResult = props => <div className="tc pdtb">{props.text}</div>
+
 NotResult.defaultProps = {
   text: '暂无数据!'
 }

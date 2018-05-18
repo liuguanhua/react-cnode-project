@@ -9,10 +9,10 @@ import MaskPopups from '@component/common/MaskPopups'
 import ArticleComment from './Article-Comment'
 import UserComment from './User-Comment'
 
-import '@assets/fonts/svg/operat-del.svg'
-import '@assets/fonts/svg/operat-keep-default.svg'
-import '@assets/fonts/svg/operat-keep-active.svg'
-import '@assets/fonts/svg/meedit.svg'
+import '@fonts/svg/operat-del.svg'
+import '@fonts/svg/operat-keep-default.svg'
+import '@fonts/svg/operat-keep-active.svg'
+import '@fonts/svg/meedit.svg'
 
 class ThemeKeep extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class ThemeKeep extends React.Component {
     return this.userWithCollect(id, 'de_collect') //取消收藏
   }
   userWithCollect(id, url, callback) {
-    const isLogin = this.$userExp()
+    const isLogin = this.$getStorage()
 
     isLogin &&
       this.$request({
@@ -74,7 +74,7 @@ class ArticleDecCnt extends React.Component {
       isPopups: false,
       listh: 0
     }
-    this.userInfo = this.$userExp()
+    this.userInfo = this.$getStorage()
   }
   SendCancelRun() {
     this.setState({ isPopups: false })

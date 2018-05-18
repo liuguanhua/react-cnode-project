@@ -4,16 +4,15 @@ import { connect } from 'react-redux'
 
 import ActionNews from '@store/actions/ActionNews'
 
-import '@assets/fonts/svg/nall.svg'
-import '@assets/fonts/svg/nask.svg'
-import '@assets/fonts/svg/njob.svg'
-import '@assets/fonts/svg/ngood.svg'
-import '@assets/fonts/svg/nshare.svg'
-
-import '@assets/fonts/svg/nhome.svg'
-import '@assets/fonts/svg/nnews.svg'
-import '@assets/fonts/svg/nissue.svg'
-import '@assets/fonts/svg/nuser.svg'
+import '@fonts/svg/nall.svg'
+import '@fonts/svg/nask.svg'
+import '@fonts/svg/njob.svg'
+import '@fonts/svg/ngood.svg'
+import '@fonts/svg/nshare.svg'
+import '@fonts/svg/nhome.svg'
+import '@fonts/svg/nnews.svg'
+import '@fonts/svg/nissue.svg'
+import '@fonts/svg/nuser.svg'
 
 class TabFooNav extends React.Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class TabFooNav extends React.Component {
     this.state = {
       num: 0
     }
-    this.isLogin = this.$userExp()
+    this.isLogin = this.$getStorage()
   }
   /* 	componentWillReceiveProps(prevProps, prevState) {
 				const {result} = this.props.ReadNews;
@@ -80,7 +79,7 @@ class Menu extends React.Component {
     super(props)
   }
   render() {
-    const getLogin = this.$userExp()
+    const getLogin = this.$getStorage()
     const meLink = getLogin && getLogin.loginname ? `/user` : '/user/login'
     const tabnav = [
       {

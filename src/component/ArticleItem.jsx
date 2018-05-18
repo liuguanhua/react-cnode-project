@@ -3,8 +3,8 @@ import LazyImage from '@component/common/LazyImage'
 
 import { formatDate } from '@script/utils'
 
-import '@assets/fonts/svg/write.svg'
-import '@assets/fonts/svg/page-views.svg'
+import '@fonts/svg/write.svg'
+import '@fonts/svg/page-views.svg'
 
 const TitleType = props => (
   <span className={props.color + ' ft-white mgr title-type'}>{props.type}</span>

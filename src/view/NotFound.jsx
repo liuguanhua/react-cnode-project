@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '@assets/fonts/svg/notfound.svg'
+import '@fonts/svg/notfound.svg'
 export default () => {
   return (
     <div className="tc">

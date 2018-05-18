@@ -11,13 +11,13 @@ import MaskPopups from '@component/common/MaskPopups'
 import { formatDate } from '@script/utils'
 import { DetectLogin, LoadLoop, NotResult } from '@component/common/SharedCompt'
 
-import '@assets/fonts/svg/meuser.svg'
-import '@assets/fonts/svg/metime.svg'
-import '@assets/fonts/svg/mescore.svg'
-import '@assets/fonts/svg/write.svg'
-import '@assets/fonts/svg/page-views.svg'
-import '@assets/fonts/svg/medropout.svg'
-import '@assets/fonts/svg/meedit.svg'
+import '@fonts/svg/meuser.svg'
+import '@fonts/svg/metime.svg'
+import '@fonts/svg/mescore.svg'
+import '@fonts/svg/write.svg'
+import '@fonts/svg/page-views.svg'
+import '@fonts/svg/medropout.svg'
+import '@fonts/svg/meedit.svg'
 
 const dateFormat = time => {
   const date = new Date(time)
@@ -32,7 +32,7 @@ const dateFormat = time => {
 class Mine extends React.Component {
   constructor(props) {
     super(props)
-    this.userInfo = this.$userExp()
+    this.userInfo = this.$getStorage()
     this.state = {
       info: {}
     }
@@ -86,7 +86,7 @@ class UserCenter extends React.Component {
     this.setState({ isPopups: false })
   }
   SendDeterMine() {
-    Rstore.remove('saveUser')
+    Rstore.remove('USER_INFO')
     this.props.history.push({ pathname: '/' })
   }
   render() {

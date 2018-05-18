@@ -2,14 +2,13 @@ import { Link } from 'react-router-dom'
 import LazyImage from '@component/common/LazyImage'
 import classNames from 'classnames'
 
-import '@assets/fonts/svg/thumbs.svg'
-import '@assets/fonts/svg/comment.svg'
-let arrGetName = []
+import '@fonts/svg/thumbs.svg'
+import '@fonts/svg/comment.svg'
 class CommentList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isLogin: this.$userExp(),
+      isLogin: this.$getStorage(),
       userTotalUps: this.props.item.ups
     }
   }
@@ -58,8 +57,6 @@ class CommentList extends React.Component {
     if (!isLogin) {
       return this.props.history.push('/user/login')
     }
-    // if (isAtmuch) {   (arrGetName.indexOf({name, id}) === -1) &&
-    // arrGetName.push({name, id}); } else { }
     this.props.sendcnt({ name, reply_id })
   }
   render() {

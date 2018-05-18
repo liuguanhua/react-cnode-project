@@ -2,6 +2,7 @@ import { request } from '@script/reuse'
 export default {
   fetchData(accesstoken) {
     return (dispatch, getState) => {
+      //获取消息条数
       request({
         url: 'message/count',
         params: {
