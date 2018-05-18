@@ -4,7 +4,7 @@
 
 技术栈： WebPack^3.6、React^16.3、React-Router-Dom^4.2、Antd^3.5、React-Dom^16.3、Redux、React-Redux、Es6、Flex、Sass
 
-访问链接：[在线访问](//liuguanhua.github.io/cnode)
+链接：[在线访问](//liuguanhua.github.io/cnode)
 
 ![qrcode](https://raw.githubusercontent.com/liuguanhua/liuguanhua.github.io/master/cnode/cnode-qrcode.png)
 
@@ -23,7 +23,7 @@ react-cnode-project/
        |
        ├──store/                     * Redux
        │
-       ├──view                       * 视图展示页面
+       ├──view/                      * 视图展示页面
        │
        │__index.js                   * 入口文件
        │
