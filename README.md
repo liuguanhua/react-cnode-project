@@ -6,7 +6,8 @@
 
 链接：[在线访问](//liuguanhua.github.io/cnode)
 
-![qrcode](https://raw.githubusercontent.com/liuguanhua/liuguanhua.github.io/master/cnode/cnode-qrcode.png)
+![qrcode](https://raw.githubusercontent.com/liuguanhua/react-cnode-project/master/src/assets/images/cnode-qrcode.png)
+![demo](https://raw.githubusercontent.com/liuguanhua/react-cnode-project/master/src/assets/images/small-demo.gif)
 
 ### 目录
 

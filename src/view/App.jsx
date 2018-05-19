@@ -33,7 +33,8 @@ export default () => {
         const getRoutes = findMatch(pathname)
         const isBackTop = arrPathName.includes(pathname)
         const isAdd = getRoutes && pathname.split('/').length < 3
-        const classMain = classNames('pa tl0 wh100 view-main', {
+        const classMain = classNames('tl0 wh100 view-main', {
+          pa: Object.is(pathname, '/'),
           container: isAdd,
           'container-top': !isAdd,
           'bg-white': Object.is(pathname, '/share')

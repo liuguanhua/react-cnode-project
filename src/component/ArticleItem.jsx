@@ -76,15 +76,21 @@ const TopicItem = props => {
           {(() => {
             if (item.top) {
               return <TitleType color="bg-color" type="置顶" />
-            } else {
-              switch (item.tab) {
-                case 'share':
-                  return <TitleType type="分享" />
-                case 'good':
-                  return <TitleType color="bg-olor" type="精华" />
-                case 'ask':
-                  return <TitleType type="问答" />
-              }
+            }
+            if (item.good) {
+              return <TitleType color="bg-color" type="精华" />
+            }
+            switch (item.tab) {
+              case 'share':
+                return <TitleType type="分享" />
+              case 'good':
+                return <TitleType color="bg-olor" type="精华" />
+              case 'ask':
+                return <TitleType type="问答" />
+              case 'job':
+                return <TitleType type="招聘" />
+              case 'dev':
+                return <TitleType type="测试" />
             }
           })()}
           {item.title}
