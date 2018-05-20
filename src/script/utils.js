@@ -37,10 +37,10 @@ export const formatDate = (hisTime, nowTime = new Date()) => {
 }
 /**
  * 提示弹窗
- * @param {any} msg 提示信息
+ * @param {String} msg 提示信息
  */
 export const showMsg = msg => {
-  typeof tipTime !== 'undefined' && tipTime && clearTimeout(this.tipTime)
+  typeof tipTime !== 'undefined' && tipTime && clearTimeout(tipTime)
   const formMsg = document.getElementById('form-msg')
   if (formMsg) {
     formMsg.style.display = 'block'
@@ -62,7 +62,7 @@ export const showMsg = msg => {
 /**
  * 存储数据
  * @param {String} key 名称
- * @param {any} value 数据
+ * @param {Object} value 数据
  */
 export const setStorage = (key, value) => {
   value['setKeyTime'] = +new Date()

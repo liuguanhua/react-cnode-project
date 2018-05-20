@@ -3,7 +3,7 @@ import { getStorage, showMsg } from '@script/utils'
 const isDev = Object.is(process.env.NODE_ENV, 'development')
 const apiUrl = 'https://cnodejs.org/api/v1/'
 /**
- * 请求数据
+ * 公告请求数据
  * @param {Object} options
  * @returns
  */

@@ -8,7 +8,7 @@ import reducers from '@store/reducer/ReducerRoot'
 import history from '@script/history'
 import '@script/firstload'
 import '@script/reuse'
-import registerServiceWorker from './registerServiceWorker'
+// import registerServiceWorker from './registerServiceWorker'
 
 import App from '@view/App'
 import '@assets/styles/css/global'
@@ -27,4 +27,4 @@ render(
   </ModeRouter>,
   document.getElementById('root')
 )
-registerServiceWorker()
+// registerServiceWorker()

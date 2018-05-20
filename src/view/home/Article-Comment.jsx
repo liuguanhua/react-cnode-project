@@ -12,13 +12,13 @@ class CommentList extends React.Component {
       userTotalUps: this.props.item.ups
     }
   }
-  UserLike(id, i) {
+  UserLike(loginname, id, i) {
     //用户点赞
     const { isLogin } = this.state
     const uid = isLogin && isLogin.id
     if (!isLogin) {
       return this.props.history.push('/user/login')
-    } else if (isLogin && isLogin.id === id) {
+    } else if (isLogin && isLogin.loginname === loginname) {
       return this.$showMsg('亲,不能给自己点赞!')
     }
     this.$request({
@@ -102,7 +102,7 @@ class CommentList extends React.Component {
             <span className="user-thumbs">
               <svg
                 className="svg svg-thumbs"
-                onClick={this.UserLike.bind(this, id, index)}
+                onClick={this.UserLike.bind(this, author.loginname, id, index)}
               >
                 <use xlinkHref="#thumbs" fill={isUp ? '#639' : ''} />
               </svg>
