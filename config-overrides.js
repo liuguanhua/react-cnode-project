@@ -14,6 +14,9 @@ module.exports = {
       ['import', { libraryName: 'antd', style: true }],
       config
     )
+    if (isProd) {
+      config.plugins.splice(config.plugins.length - 2, 1) //去掉ServiceWorker
+    }
     config = rewireLess.withLoaderOptions({
       modifyVars: { '@primary-color': '#639' }
     })(config, env)

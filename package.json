@@ -32,10 +32,8 @@
     "svg-sprite-loader": "^3.7.3"
   },
   "scripts": {
-    "build-css":
-      "node-sass-chokidar src/assets/sass/ --include-path ./node_modules -o src/assets/styles/css/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/assets/sass/ --include-path ./node_modules -o src/assets/styles/css/ --watch --recursive",
+    "build-css": "node-sass-chokidar src/assets/sass/ --include-path ./node_modules -o src/assets/styles/css/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/assets/sass/ --include-path ./node_modules -o src/assets/styles/css/ --watch --recursive",
     "start-js": "react-app-rewired start",
     "build-js": "react-app-rewired build",
     "start": "rimraf build && npm-run-all -p watch-css start-js",

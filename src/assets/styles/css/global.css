@@ -371,6 +371,7 @@ input[type='file'] > input[type='button']::-moz-focus-inner {
   padding: 0; }
 
 .container {
+  min-height: 100%;
   padding: 1.9rem 0 2.7rem; }
 
 .container-top {
@@ -719,6 +720,9 @@ input[type='file'] > input[type='button']::-moz-focus-inner {
 
 .mask-page {
   z-index: 1; }
+
+#root {
+  height: 100%; }
 
 a:hover {
   color: #639; }

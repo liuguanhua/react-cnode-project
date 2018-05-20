@@ -74,4 +74,10 @@ export const setStorage = (key, value) => {
  *
  * @returns
  */
-export const getStorage = () => Rstore.get('USER_INFO')
+export const getStorage = () => {
+  const userInfo = Rstore.get('USER_INFO')
+  if (userInfo && userInfo.accesstoken) {
+    return userInfo
+  }
+  return false
+}
