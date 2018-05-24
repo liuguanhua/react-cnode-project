@@ -2,7 +2,8 @@ export default (
   state = {
     result: [],
     page: 0,
-    scrollTop: 0
+    scrollTop: 0,
+    topicType: 'all'
   },
   action
 ) => {
@@ -11,7 +12,8 @@ export default (
       return {
         ...state,
         result: action.result,
-        page: action.page
+        page: action.page,
+        topicType: action.topicType
       }
     case 'SCROLL_TOP_SITE':
       return {

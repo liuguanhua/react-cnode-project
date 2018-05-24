@@ -78,14 +78,17 @@ class Menu extends React.Component {
   constructor(props) {
     super(props)
   }
+  componentWillReceiveProps(nextProps) {}
   render() {
     const getLogin = this.$getStorage()
+    // console.log(this.props.rTopicList.topicType)
     const meLink = getLogin && getLogin.loginname ? `/user` : '/user/login'
     const tabnav = [
       {
         name: '首页',
         type: 'home',
-        link: '/'
+        link: '/',
+        search: `?tab=${this.props.rTopicList.topicType}`
       },
       {
         name: '消息',
@@ -113,7 +116,7 @@ class Menu extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return { ReadNews: state.ReadNews }
+  return { ReadNews: state.ReadNews, rTopicList: state.rTopicList }
 }
 const actions = {
   ...ActionNews

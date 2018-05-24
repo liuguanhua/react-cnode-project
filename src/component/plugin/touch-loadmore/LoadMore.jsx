@@ -63,24 +63,31 @@ class LoadMore extends React.Component {
       },
       success: result => {
         if (this.state.isLoadData) {
+          const { data } = result
           this.setState({
-            infoList: isReset ? result.data : infoList.concat(result.data),
+            infoList: isReset ? data : infoList.concat(data),
             hasMore: 1,
             initializing: 2,
             // initialized
             loadState: 'loaded'
           })
-          const { dispatch, rTopicList } = this.props
-          !Object.is(rTopicList.page, page) &&
-            dispatch(aHomeTopic.keepTopic(result.data, page))
-
+          const { dispatch, rTopicList, type } = this.props
+          ;(!Object.is(rTopicList.page, page) || isReset) &&
+            dispatch(
+              aHomeTopic.keepTopic({
+                data,
+                page,
+                type,
+                isReset
+              })
+            )
           if (isReset) {
             //不同类型 or 刷新重置滚动条
             window.scrollTo(0, 0)
             this.refScroll.scrollTop = 0
           }
           // if (Math.ceil(infoList.length / 10) === 2) {
-          if (result.data.length < 10) {
+          if (data.length < 10) {
             this.setState({ hasMore: false })
           }
           resolve && resolve()
