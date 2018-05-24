@@ -1,37 +1,38 @@
+import { connect } from 'react-redux'
 import Tloader from './react-touch-loader'
 import ArticleItem from '@component/ArticleItem'
+import aHomeTopic from '@store/actions/ActionTopicList'
 import './load-more.less'
-export default class LoadMore extends React.Component {
-  constructor() {
-    super()
+class LoadMore extends React.Component {
+  constructor(props) {
+    super(props)
     this.state = {
       canRefreshResolve: 1,
-      hasMore: 0,
-      infoList: [],
+      hasMore: 1,
+      infoList: props.rTopicList.result,
       isLoadData: true,
-      initializing: 1,
+      initializing: props.rTopicList.result.length ? 2 : 1,
       refreshedAt: Date.now()
     }
     this.refScroll = null
   }
-
   componentWillReceiveProps(nextProps) {
-    this.setState(
-      {
-        // infoList: [],
-        hasMore: 1
-      },
-      () => {
-        window.scrollTo(0, 0) //不同类型重置滚动条
-        this.refScroll.scrollTop = 0
-        // this.loadData(resolve,'reset');
-        this.refresh()
-      }
-    )
+    !Object.is(nextProps.type, this.props.type) &&
+      this.setState(
+        {
+          // infoList: [],
+          hasMore: 1
+        },
+        () => {
+          this.refresh()
+        }
+      )
   }
   componentDidMount() {
-    this.loadData()
-    this.refScroll = this.refs.scrollCnt.refs.panel
+    const { page, scrollTop } = this.props.rTopicList
+    !page && this.loadData()
+    !this.refScroll && (this.refScroll = this.refs.scrollCnt.refs.panel)
+    scrollTop && (this.refScroll.scrollTop = scrollTop)
   }
   refresh(resolve, reject) {
     this.setState(
@@ -43,14 +44,20 @@ export default class LoadMore extends React.Component {
       }
     )
   }
+  componentWillUnmount() {
+    const { dispatch, rTopicList } = this.props
+    dispatch(aHomeTopic.recordScrollSite(this.refScroll.scrollTop)) //保存滚动条位置
+  }
+
   loadData(resolve, reset) {
     //加载数据
     const { infoList } = this.state
     const isReset = reset === 'reset'
+    const page = isReset ? 1 : Math.ceil(infoList.length / 10) + 1
     this.$request({
       url: 'topics',
       params: {
-        page: isReset ? 1 : Math.ceil(infoList.length / 10) + 1,
+        page,
         tab: this.props.type,
         limit: 10
       },
@@ -59,9 +66,19 @@ export default class LoadMore extends React.Component {
           this.setState({
             infoList: isReset ? result.data : infoList.concat(result.data),
             hasMore: 1,
-            initializing: 2, // initialized
+            initializing: 2,
+            // initialized
             loadState: 'loaded'
           })
+          const { dispatch, rTopicList } = this.props
+          !Object.is(rTopicList.page, page) &&
+            dispatch(aHomeTopic.keepTopic(result.data, page))
+
+          if (isReset) {
+            //不同类型 or 刷新重置滚动条
+            window.scrollTo(0, 0)
+            this.refScroll.scrollTop = 0
+          }
           // if (Math.ceil(infoList.length / 10) === 2) {
           if (result.data.length < 10) {
             this.setState({ hasMore: false })
@@ -99,3 +116,9 @@ export default class LoadMore extends React.Component {
     )
   }
 }
+
+export default connect((state, action) => {
+  return {
+    rTopicList: state.rTopicList
+  }
+})(LoadMore)

@@ -27,7 +27,7 @@ class TabFooNav extends React.Component {
 				result && result.success && this.setState({num: result.data});
 		} */
   componentDidMount() {
-    this.isLogin && this.props.actions.fetchData(this.isLogin.accesstoken)
+    // this.isLogin && this.props.actions.fetchData(this.isLogin.accesstoken)
   }
   render() {
     const { result } = this.props.ReadNews
@@ -122,3 +122,4 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch)
 })
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Menu))
+// export default connect(mapStateToProps, mapDispatchToProps)(Menu)
