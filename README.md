@@ -52,5 +52,7 @@ react-cnode-project/
 生产：yarn build
 ```
 
+访问 web 页时，需先修改 package.json 文件中 homepage 字段，再进行 yarn build [详见](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#building-for-relative-paths)
+
 <!-- "homepage": "https://liuguanhua.github.io/cnode/",
 "homepage": "http://localhost:1111/react-cnode-project/build/", -->
