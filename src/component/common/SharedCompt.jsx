@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 // import PropTypes from "prop-types";
 
@@ -99,9 +100,9 @@ NotLogin.defaultProps = {
 
 export const DetectLogin = props => {
   class LoginStatus extends React.Component {
-    constructor(props) {
-      super(props)
-    }
+    // constructor(props) {
+    //   super(props)
+    // }
     render() {
       if (this.$getStorage()) return <props.realuser {...this.props} />
       return <NotLogin />

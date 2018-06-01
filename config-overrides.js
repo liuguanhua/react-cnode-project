@@ -8,15 +8,13 @@ const rewireLess = require('react-app-rewire-less')
 
 module.exports = {
   webpack: function(config, env) {
-    config.module.rules.shift() //去除eslint,配置React全局会校验不过
-    config.module.rules[0].oneOf[3].exclude.push(/\.svg$/)
+    // config.module.rules.shift() //去除eslint,配置React全局会校验不过
+    config.module.rules[1].oneOf[3].exclude.push(/\.svg$/)
     config = injectBabelPlugin(
       ['import', { libraryName: 'antd', style: true }],
       config
     )
-    if (isProd) {
-      config.plugins.splice(config.plugins.length - 2, 1) //去掉ServiceWorker
-    }
+    // isProd && config.plugins.splice(config.plugins.length - 2, 1) //去掉ServiceWorker
     config = rewireLess.withLoaderOptions({
       modifyVars: { '@primary-color': '#639' }
     })(config, env)
@@ -46,7 +44,7 @@ module.exports = {
       '@script': srcDir + 'script'
     }
     config.resolve.extensions.push('.scss', '.less', '.css')
-    config.plugins.push(new webpack.ProvidePlugin({ React: 'react' }))
+    // config.plugins.push(new webpack.ProvidePlugin({ React: 'react' }))
     return config
   }
 }

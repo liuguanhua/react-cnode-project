@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import LazyImage from '@component/common/LazyImage'
 import classNames from 'classnames'
@@ -33,7 +34,7 @@ class CommentList extends React.Component {
           if (result.action === 'down') {
             //取消点赞
             curUps.map((item, index) => {
-              item === uid && curUps.splice(index, 1)
+              return item === uid && curUps.splice(index, 1)
             })
           } else {
             curUps.push(uid)
@@ -122,9 +123,6 @@ class CommentList extends React.Component {
 }
 
 export default class ArticleComment extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   componentDidMount() {
     this.props.getElHeight(this.refs.replyList.scrollHeight)
   }

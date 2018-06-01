@@ -1,3 +1,4 @@
+import React from 'react'
 import axios from 'axios'
 import { getStorage, showMsg } from '@script/utils'
 const isDev = Object.is(process.env.NODE_ENV, 'development')
@@ -30,9 +31,9 @@ export const request = options => {
         isDev && console.error(error)
         if (error.response) {
           const { data, status } = error.response
-          options.error && options.error(data)
+          options.error && options.error(data, status)
           !data.success && data.error_msg && showMsg(data.error_msg)
-          reject(data)
+          reject(data, status)
         }
       })
   })

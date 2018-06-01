@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'react-lazy-image'
 export default props => (
   <Image

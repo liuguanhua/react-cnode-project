@@ -1,3 +1,4 @@
+import React from 'react'
 import { Route } from 'react-router-dom'
 import '@fonts/svg/goback.svg'
 const SubHeader = props => (

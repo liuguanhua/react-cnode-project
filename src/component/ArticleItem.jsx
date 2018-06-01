@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import LazyImage from '@component/common/LazyImage'
 
@@ -91,6 +92,8 @@ const TopicItem = props => {
                 return <TitleType type="招聘" />
               case 'dev':
                 return <TitleType type="测试" />
+              default:
+                return ''
             }
           })()}
           {item.title}

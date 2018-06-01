@@ -1,3 +1,4 @@
+import React from 'react'
 export default () => (
   <header
     className="header bg-color ft-white pf w100 tl0 z1"

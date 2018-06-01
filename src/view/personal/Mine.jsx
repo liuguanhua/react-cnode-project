@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { Tabs } from 'antd'
 import Rstore from 'store'
@@ -9,7 +10,7 @@ import LazyImage from '@component/common/LazyImage'
 import MaskPopups from '@component/common/MaskPopups'
 
 import { formatDate } from '@script/utils'
-import { DetectLogin, LoadLoop, NotResult } from '@component/common/SharedCompt'
+import { LoadLoop, NotResult } from '@component/common/SharedCompt'
 
 import '@fonts/svg/meuser.svg'
 import '@fonts/svg/metime.svg'
@@ -19,6 +20,7 @@ import '@fonts/svg/page-views.svg'
 import '@fonts/svg/medropout.svg'
 import '@fonts/svg/meedit.svg'
 
+const checkNum = num => (+num > 10 ? num : `0${num}`)
 const dateFormat = time => {
   const date = new Date(time)
   const [year, month, day] = [
@@ -26,7 +28,7 @@ const dateFormat = time => {
     date.getMonth() + 1,
     date.getDate()
   ]
-  return `${year} / ${month} / ${day}`
+  return `${year} / ${checkNum(month)} / ${checkNum(day)}`
 }
 
 class Mine extends React.Component {
@@ -90,7 +92,7 @@ class UserCenter extends React.Component {
     this.props.history.push({ pathname: '/' })
   }
   render() {
-    const { result, userInfo, isUserCur } = this.props
+    const { result, isUserCur } = this.props
     return (
       <section className="user-center">
         <div className="user-center-info">

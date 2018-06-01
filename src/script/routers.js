@@ -1,6 +1,6 @@
 import Loadable from 'react-loadable'
 
-const ShowLoadingComponent = props => {
+/* const ShowLoadingComponent = props => {
   if (props.isLoading) {
     if (props.timedOut) {
       return <div className="pdtb tc">加载超时</div>
@@ -8,7 +8,7 @@ const ShowLoadingComponent = props => {
     return props.pastDelay ? <div className="pdtb tc">玩命加载中...</div> : null
   }
   return props.error ? <div>Error! Component failed to load</div> : null
-}
+} */
 const AsyncLoadable = opts => {
   return Loadable({
     loading: () => null, //ShowLoadingComponent,

@@ -1,3 +1,4 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import qs from 'qs'
 
@@ -36,7 +37,7 @@ const arrTabHead = [
   }
 ]
 
-const ListPhoto = props => {
+/* const ListPhoto = props => {
   const tabName = props.text || []
   const dataItem = tabName.length
     ? tabName.map((item, index) => (
@@ -47,7 +48,7 @@ const ListPhoto = props => {
       ))
     : '加载中...'
   return <ul>{dataItem}</ul>
-}
+} */
 const TabNav = props => {
   const activeTab = {}
   activeTab[props.type] = 'ft-color'
@@ -71,9 +72,6 @@ const TabNav = props => {
 }
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   componentDidMount() {
     // console.log(this.refs.ArticleList)
   }

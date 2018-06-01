@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import Tloader from './react-touch-loader'
 import ArticleItem from '@component/ArticleItem'
@@ -45,7 +46,7 @@ class LoadMore extends React.Component {
     )
   }
   componentWillUnmount() {
-    const { dispatch, rTopicList } = this.props
+    const { dispatch } = this.props
     dispatch(aHomeTopic.recordScrollSite(this.refScroll.scrollTop)) //保存滚动条位置
   }
 

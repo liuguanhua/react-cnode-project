@@ -1,4 +1,5 @@
-;({
+"use stict";;
+({
   el: document.documentElement,
   init() {
     this.fontAdapt()

@@ -1,5 +1,6 @@
-import '@fonts/svg/send.svg'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import '@fonts/svg/send.svg'
 export default class UserComment extends React.Component {
   constructor(props) {
     super(props)
@@ -33,12 +34,12 @@ export default class UserComment extends React.Component {
     this.setState({ content: e.target.value })
   }
   EnterSubmit(e) {
-    if (e.keyCode == 13) this.newCommentSubmit()
+    if (e.keyCode === 13) this.newCommentSubmit()
   }
   /* shouldComponentUpdate(nextProps, nextState) {
     const {reply_content} = nextProps.info.data;
     if (reply_content) {
-      const isUpdate = (this.state.value !== `@${reply_content.name}`) || (this.state.reply_id !== `${reply_content.reply_id}`);
+      const isUpdate = (this.state.value !=== `@${reply_content.name}`) || (this.state.reply_id !=== `${reply_content.reply_id}`);
       return isUpdate;
     }
     return true;
@@ -53,7 +54,6 @@ export default class UserComment extends React.Component {
     }
   }
   render() {
-    const { data } = this.props.info
     return (
       <div id="room-speak" className="room-speak">
         <div data-layout-align="space-between center" data-layout="layout">

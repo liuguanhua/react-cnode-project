@@ -1,3 +1,4 @@
+import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -14,7 +15,7 @@ import '@fonts/svg/operat-keep-default.svg'
 import '@fonts/svg/operat-keep-active.svg'
 import '@fonts/svg/meedit.svg'
 
-class ThemeKeep extends React.Component {
+/* class ThemeKeep extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -65,7 +66,7 @@ class ThemeKeep extends React.Component {
       </div>
     )
   }
-}
+} */
 
 class ArticleDecCnt extends React.Component {
   constructor(props) {

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { DetectLogin, LoadLoop, NotResult } from '@component/common/SharedCompt'
 import { Tabs } from 'antd'

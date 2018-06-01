@@ -1,3 +1,4 @@
+import React from 'react'
 import { DetectLogin } from '@component/common/SharedCompt'
 
 class Issue extends React.Component {
@@ -41,7 +42,7 @@ class Issue extends React.Component {
     }
     this.issueSubmit = () => {
       if (state.title.length < 10) {
-        return this.$showMsg('亲,请输入10字以上!')
+        return this.$showMsg('亲,请输入10字以上的标题!')
       } else if (!state.content) {
         return this.$showMsg('亲,请输入内容!')
       }
@@ -72,7 +73,7 @@ class Issue extends React.Component {
     const { arrRadio } = this.state
     if (arrRadio[i].isChecked) return
     arrRadio.map((item, index) => {
-      item.isChecked = Object.is(i, index) ? true : false
+      return (item.isChecked = Object.is(i, index) ? true : false)
     })
     this.setState(
       {
@@ -116,9 +117,6 @@ class Issue extends React.Component {
 }
 
 class ThemeCate extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     return (
       <div>

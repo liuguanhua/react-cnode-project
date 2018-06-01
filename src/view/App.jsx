@@ -1,13 +1,12 @@
-import { Router, HashRouter, Switch, Route, Redirect } from 'react-router-dom'
+import React from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { BackTop } from 'antd'
 import classNames from 'classnames'
 import qs from 'qs'
 
-import history from '@script/history'
 import { getStorage } from '@script/utils'
 import RouteConfig from '@script/routers'
 
-import Header from '@component/Header'
 import Menu from '@component/Menu'
 import SubHeader from '@component/SubHeader'
 
@@ -20,7 +19,7 @@ const RouteWithSubRoutes = route => (
     render={props => <route.component {...props} routes={route.routes} />}
   />
 )
-const findMatch = path => RouteConfig.find(f => f.path == path)
+const findMatch = path => RouteConfig.find(f => f.path === path)
 
 export default () => {
   let isUserCur = true

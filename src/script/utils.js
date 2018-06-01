@@ -1,5 +1,4 @@
 import Rstore from 'store'
-import history from '@script/history'
 
 /**
  * 算时间差
@@ -14,7 +13,7 @@ export const formatDate = (hisTime, nowTime = new Date()) => {
   const minute = 1000 * 60
   const hour = minute * 60
   const day = hour * 24
-  const halfamonth = day * 15
+  // const halfamonth = day * 15
   const month = day * 30
   const year = month * 12
 
@@ -26,12 +25,12 @@ export const formatDate = (hisTime, nowTime = new Date()) => {
     diffValue / hour,
     diffValue / minute
   ]
-  if (_year >= 1) result = parseInt(_year) + '年前'
-  else if (_month >= 1) result = parseInt(_month) + '个月前'
-  else if (_week >= 1) result = parseInt(_week) + '周前'
-  else if (_day >= 1) result = parseInt(_day) + '天前'
-  else if (_hour >= 1) result = parseInt(_hour) + '个小时前'
-  else if (_min >= 1) result = parseInt(_min) + '分钟前'
+  if (_year >= 1) result = parseInt(_year, 10) + '年前'
+  else if (_month >= 1) result = parseInt(_month, 10) + '个月前'
+  else if (_week >= 1) result = parseInt(_week, 10) + '周前'
+  else if (_day >= 1) result = parseInt(_day, 10) + '天前'
+  else if (_hour >= 1) result = parseInt(_hour, 10) + '个小时前'
+  else if (_min >= 1) result = parseInt(_min, 10) + '分钟前'
   else result = '刚刚'
   return result
 }
@@ -39,8 +38,9 @@ export const formatDate = (hisTime, nowTime = new Date()) => {
  * 提示弹窗
  * @param {String} msg 提示信息
  */
+let tipTime = null
 export const showMsg = msg => {
-  typeof tipTime !== 'undefined' && tipTime && clearTimeout(tipTime)
+  tipTime && clearTimeout(tipTime)
   const formMsg = document.getElementById('form-msg')
   if (formMsg) {
     formMsg.style.display = 'block'
@@ -54,7 +54,7 @@ export const showMsg = msg => {
       "<div layout-align='center center' layout>" + msg + '</div>'
     document.getElementsByTagName('body')[0].appendChild(sDiv)
   }
-  const tipTime = setTimeout(
+  tipTime = setTimeout(
     () => (document.getElementById('form-msg').style.display = 'none'),
     1000
   )
