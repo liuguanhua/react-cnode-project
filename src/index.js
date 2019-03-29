@@ -1,8 +1,8 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { Router, HashRouter } from 'react-router-dom'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
+import {render} from 'react-dom'
+import {Router, HashRouter} from 'react-router-dom'
+import {createStore, applyMiddleware} from 'redux'
+import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 
 import reducers from '@store/reducer/ReducerRoot'
@@ -22,10 +22,8 @@ const ModeRouter = Object.is(process.env.NODE_ENV, 'development')
 
 render(
   <ModeRouter history={history} hashType="hashbang">
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </ModeRouter>,
-  document.getElementById('root')
-)
+  <Provider store={store}>
+    <App/>
+  </Provider>
+</ModeRouter>, document.getElementById('root'))
 registerServiceWorker()

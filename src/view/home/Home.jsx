@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import qs from 'qs'
 
 import LoadMoreInfo from '@component/plugin/touch-loadmore/LoadMore'
@@ -9,28 +9,23 @@ const arrTabHead = [
     name: '全部',
     link: '/',
     type: 'all'
-  },
-  {
+  }, {
     name: '精华',
     link: '/?tab=good',
     type: 'good'
-  },
-  {
+  }, {
     name: '分享',
     link: '/?tab=share',
     type: 'share'
-  },
-  {
+  }, {
     name: '问答',
     link: '/?tab=ask',
     type: 'ask'
-  },
-  {
+  }, {
     name: '招聘',
     link: '/?tab=job',
     type: 'job'
-  },
-  {
+  }, {
     name: '测试',
     link: '/?tab=dev',
     type: 'dev'
@@ -57,8 +52,7 @@ const TabNav = props => {
       <ul
         className="tab-nav-list bg-white tc"
         data-layout="layout"
-        data-layout-align="space-between center"
-      >
+        data-layout-align="space-between center">
         {arrTabHead.map((item, index) => (
           <li key={index}>
             <NavLink to={item.link} className={activeTab[item.type]}>
@@ -76,16 +70,22 @@ export default class Home extends React.Component {
     // console.log(this.refs.ArticleList)
   }
   shouldComponentUpdate(nextProps, nextState) {
-    const curPath = qs.parse(nextProps.location.search.slice(1)).tab || 'all'
-    const goPath = qs.parse(this.props.location.search.slice(1)).tab || 'all'
+    const curPath = qs
+      .parse(nextProps.location.search.slice(1))
+      .tab || 'all'
+    const goPath = qs
+      .parse(this.props.location.search.slice(1))
+      .tab || 'all'
     return curPath !== goPath
   }
   render() {
-    const tabType = qs.parse(this.props.location.search.slice(1)).tab || 'all'
+    const tabType = qs
+      .parse(this.props.location.search.slice(1))
+      .tab || 'all'
     return (
       <div>
-        <TabNav type={tabType} />
-        <LoadMoreInfo ref="ArticleList" type={tabType} />
+        <TabNav type={tabType}/>
+        <LoadMoreInfo ref="ArticleList" type={tabType}/>
       </div>
     )
   }

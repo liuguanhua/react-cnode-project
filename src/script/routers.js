@@ -18,19 +18,20 @@ const AsyncLoadable = opts => {
   })
 }
 
-export default [
-  {
+export default [{
     path: '/',
     exact: true,
     component: AsyncLoadable({
-      loader: () => import('@view/home/Home')
+      loader: () =>
+        import ('@view/home/Home')
     }),
     name: 'NodeJS论坛'
   },
   {
     path: '/index/article-details',
     component: AsyncLoadable({
-      loader: () => import('@view/home/Article-Details')
+      loader: () =>
+        import ('@view/home/Article-Details')
     }),
     name: '详情'
   },
@@ -38,14 +39,16 @@ export default [
     path: '/news',
     exact: true,
     component: AsyncLoadable({
-      loader: () => import('@view/info/News')
+      loader: () =>
+        import ('@view/info/News')
     }),
     name: '消息'
   },
   {
     path: '/share',
     component: AsyncLoadable({
-      loader: () => import('@view/pose/Issue')
+      loader: () =>
+        import ('@view/pose/Issue')
     }),
     name: '分享'
   },
@@ -53,7 +56,8 @@ export default [
     path: '/user',
     exact: true,
     component: AsyncLoadable({
-      loader: () => import('@view/personal/Mine')
+      loader: () =>
+        import ('@view/personal/Mine')
     }),
     name: '我的'
   },
@@ -61,13 +65,14 @@ export default [
     path: '/user/login',
     component: AsyncLoadable({
       loader: () =>
-        import('@component/common/SharedCompt').then(module => module.UserLogin)
+        import ('@component/common/SharedCompt').then(module => module.UserLogin)
     }),
     name: '登录'
   },
   {
     component: AsyncLoadable({
-      loader: () => import('@view/NotFound')
+      loader: () =>
+        import ('@view/NotFound')
     }),
     name: '未找到'
   }

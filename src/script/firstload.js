@@ -1,4 +1,3 @@
-"use stict";;
 ({
   el: document.documentElement,
   init() {
